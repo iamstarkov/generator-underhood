@@ -32,6 +32,10 @@ module.exports = yeoman.generators.Base.extend({
       this.templatePath('css'),
       this.destinationPath('css')
     );
+    this.fs.copy(
+      this.templatePath('js'),
+      this.destinationPath('js')
+    );
   },
 
   install: function () {
