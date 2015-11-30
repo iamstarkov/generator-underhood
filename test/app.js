@@ -13,7 +13,7 @@ describe('generator-underhood:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'dummyfile.txt'
+      'css'
     ]);
   });
 });
