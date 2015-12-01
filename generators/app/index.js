@@ -23,14 +23,12 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    this.fs.copy(
-      this.templatePath('css'),
-      this.destinationPath('css')
-    );
-    this.fs.copy(
-      this.templatePath('js'),
-      this.destinationPath('js')
-    );
+    var copy = function (from, to) {
+      this.fs.copy(this.templatePath(from), this.destinationPath(to));
+    }.bind(this);
+
+    copy('css', 'css');
+    copy('js', 'js');
   },
 
   install: function () {
