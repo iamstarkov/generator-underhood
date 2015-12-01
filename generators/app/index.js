@@ -10,10 +10,15 @@ module.exports = yeoman.generators.Base.extend({
     var done = this.async();
 
     var prompts = [{
-      name: 'underhood',
+      name: 'underhoodName',
       message: 'underhood username:',
       store: true,
       validate: ifEmpty.bind(null, 'You have to provide name')
+    }, {
+      name: 'underhoodSite',
+      message: 'underhood site:',
+      store: true,
+      validate: ifEmpty.bind(null, 'You have to provide site')
     }];
 
     this.prompt(prompts, function (props) {
@@ -24,11 +29,13 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     var copy = function (from, to) {
-      this.fs.copy(this.templatePath(from), this.destinationPath(to));
+      this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this.props);
     }.bind(this);
 
     copy('css', 'css');
     copy('js', 'js');
+    copy('static/CNAME', 'static/CNAME');
+    copy('static/nojekyll', 'static/.nojekyll');
   },
 
   install: function () {
