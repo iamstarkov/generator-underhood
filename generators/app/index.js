@@ -1,28 +1,23 @@
 'use strict';
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+
+function ifEmpty(errorMessage, val) {
+  return val.length > 0 ? true : errorMessage;
+}
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the terrific ' + chalk.red('generator-underhood') + ' generator!'
-    ));
-
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      name: 'underhood',
+      message: 'underhood username:',
+      store: true,
+      validate: ifEmpty.bind(null, 'You have to provide name')
     }];
 
     this.prompt(prompts, function (props) {
       this.props = props;
-      // To access props later use this.props.someOption;
-
       done();
     }.bind(this));
   },
