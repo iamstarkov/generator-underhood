@@ -15,7 +15,7 @@ describe('generator-underhood:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'css', 'js', 'static/CNAME', 'static/.nojekyll'
+      'css/styles.css', 'js/index.js', 'static/CNAME', 'static/.nojekyll'
     ]);
   });
   it('creates files with proper extrapolation', function () {
