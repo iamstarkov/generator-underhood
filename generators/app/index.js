@@ -34,9 +34,10 @@ module.exports = yeoman.generators.Base.extend({
 
     copy('css', 'css');
     copy('js', 'js');
-    copy('helpers', 'helpers');
     copy('static/CNAME', 'static/CNAME');
     copy('static/nojekyll', 'static/.nojekyll');
+    copy('dump', 'dump');
+    copy('helpers', 'helpers');
   },
 
   install: function () {

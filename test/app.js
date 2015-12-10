@@ -19,6 +19,7 @@ describe('generator-underhood:app', function () {
       'js/index.js',
       'static/CNAME',
       'static/.nojekyll',
+      'dump/index.js',
       'helpers/author-render.js',
       'helpers/bust.js',
       'helpers/ensure-author-files.js',
