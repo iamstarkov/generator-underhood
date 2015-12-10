@@ -15,6 +15,7 @@ describe('generator-underhood:app', function () {
 
   it('creates files', function () {
     assert.file([
+      '.underhoodrc.json',
       'css/styles.css',
       'js/index.js',
       'static/CNAME',
@@ -33,7 +34,12 @@ describe('generator-underhood:app', function () {
       'helpers/ungroup-into.js'
     ]);
   });
+
   it('creates files with proper extrapolation', function () {
     assert.fileContent('static/CNAME', /yo\.ru/);
+  });
+
+  it('creates proper underhood config', function () {
+    assert.fileContent('.underhoodrc.json', /yo/);
   });
 });

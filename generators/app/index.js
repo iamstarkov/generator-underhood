@@ -32,6 +32,10 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this.props);
     }.bind(this);
 
+    this.fs.writeJSON('.underhoodrc.json', {
+      underhood: this.props.underhoodName
+    });
+
     copy('css', 'css');
     copy('js', 'js');
     copy('static/CNAME', 'static/CNAME');
