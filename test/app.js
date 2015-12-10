@@ -15,7 +15,21 @@ describe('generator-underhood:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'css/styles.css', 'js/index.js', 'static/CNAME', 'static/.nojekyll'
+      'css/styles.css',
+      'js/index.js',
+      'static/CNAME',
+      'static/.nojekyll',
+      'helpers/author-render.js',
+      'helpers/bust.js',
+      'helpers/ensure-author-files.js',
+      'helpers/get-author-area.js',
+      'helpers/get-links.js',
+      'helpers/last-updated.js',
+      'helpers/log.js',
+      'helpers/save-author-area.js',
+      'helpers/save-media.js',
+      'helpers/save.js',
+      'helpers/ungroup-into.js'
     ]);
   });
   it('creates files with proper extrapolation', function () {
