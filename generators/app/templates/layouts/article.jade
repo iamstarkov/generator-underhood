@@ -1,0 +1,21 @@
+extend page
+
+block meta
+  meta(name="og:url"          content=site.site_url + url)
+  if (image)
+    meta(name="og:image"      content=image.src)
+  meta(name="og:title"        content=title)
+  meta(name="og:description"  content=desc.text)
+  meta(property="description" content=desc.text)
+
+block headerTitle
+  a(href="/")= underhood.underhood
+  small= " / " + title
+
+block content
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        article
+          h1= title
+          != content.html

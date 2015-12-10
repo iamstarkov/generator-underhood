@@ -31,7 +31,19 @@ describe('generator-underhood:app', function () {
       'helpers/save-author-area.js',
       'helpers/save-media.js',
       'helpers/save.js',
-      'helpers/ungroup-into.js'
+      'helpers/ungroup-into.js',
+      'layouts/article.jade',
+      'layouts/author.jade',
+      'layouts/footer.jade',
+      'layouts/gauges.jade',
+      'layouts/head.jade',
+      'layouts/header.jade',
+      'layouts/index.jade',
+      'layouts/menu.jade',
+      'layouts/page.jade',
+      'layouts/share-text.jade',
+      'layouts/share.jade',
+      'layouts/stats.jade'
     ]);
   });
 
