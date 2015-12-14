@@ -15,6 +15,11 @@ module.exports = yeoman.generators.Base.extend({
       store: true,
       validate: ifEmpty.bind(null, 'You have to provide name')
     }, {
+      name: 'underhoodDesc',
+      message: 'underhood description:',
+      store: true,
+      validate: ifEmpty.bind(null, 'You have to provide description')
+    }, {
       name: 'underhoodSite',
       message: 'underhood site:',
       store: true,
@@ -43,6 +48,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('dump', 'dump');
     copy('helpers', 'helpers');
     copy('layouts', 'layouts');
+    copy('pages', 'pages');
   },
 
   install: function () {

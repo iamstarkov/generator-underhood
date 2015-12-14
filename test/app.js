@@ -8,6 +8,7 @@ describe('generator-underhood:app', function () {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         underhoodName: 'yo',
+        underhoodDesc: 'best yo from the yoest',
         underhoodSite: 'yo.ru'
       })
       .on('end', done);
@@ -43,12 +44,18 @@ describe('generator-underhood:app', function () {
       'layouts/page.jade',
       'layouts/share-text.jade',
       'layouts/share.jade',
-      'layouts/stats.jade'
+      'layouts/stats.jade',
+      'pages/about.md',
+      'pages/authoring.md',
+      'pages/instruction.md'
     ]);
   });
 
   it('creates files with proper extrapolation', function () {
     assert.fileContent('static/CNAME', /yo\.ru/);
+    assert.fileContent('./pages/about.md', /yo/);
+    // assert.fileContent('pages/about.md', 'best yo from the yoest');
+    assert.fileContent('pages/about.md', "https://twitter.com/yo");
   });
 
   it('creates proper underhood config', function () {
