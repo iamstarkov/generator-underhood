@@ -57,6 +57,7 @@ describe('generator-underhood:app', function describe() {
       '.gitignore',
       '.travis.yml',
       'authors.js',
+      'gulpfile.babel.js',
     ]);
   });
 

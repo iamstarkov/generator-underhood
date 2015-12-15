@@ -67,6 +67,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('travis.yml', '.travis.yml');
     copy('authors.js', 'authors.js');
     copy('deploy.sh', 'deploy.sh');
+    copy('gulpfile.babel.js', 'gulpfile.babel.js');
   },
 
   install: function install() {
