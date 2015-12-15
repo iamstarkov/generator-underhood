@@ -67,17 +67,6 @@ describe('generator-underhood:app', function describe() {
     assert.fileContent('pages/about.md', 'https://twitter.com/yo');
     assert.fileContent('pages/authoring.md', 'https://twitter.com/yo');
     assert.fileContent('pages/authoring.md', 'curator@ema.il');
-  });
-
-  it('creates proper underhood config', function it() {
-    assert.fileContent('.underhoodrc.json', 'yo');
-    assert.fileContent('.underhoodrc.json', 'best yo from the yoest');
-    assert.fileContent('.underhoodrc.json', 'yo.ru');
-    assert.fileContent('.underhoodrc.json', 'uhs');
-    assert.fileContent('.underhoodrc.json', 'curator@ema.il');
-  });
-
-  it('creates proper deploy script', function it() {
     assert.fileContent('deploy.sh', 'git remote add origin https://uhs:${GITHUB_TOKEN}@github.com/uhs/yo.git');
   });
 });

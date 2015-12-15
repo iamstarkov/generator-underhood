@@ -51,15 +51,7 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this.props);
     }.bind(this);
 
-    this.fs.writeJSON('.underhoodrc.json', {
-      underhood: this.props.underhoodName,
-      underhoodDesc: this.props.underhoodDesc,
-      underhoodSite: this.props.underhoodSite,
-      githubUser: this.props.githubUser,
-      githubRepo: this.props.githubRepo,
-      curatorEmail: this.props.curatorEmail,
-    });
-
+    copy('underhoodrc.json', '.underhoodrc.json');
     copy('css', 'css');
     copy('js', 'js');
     copy('static/CNAME', 'static/CNAME');
