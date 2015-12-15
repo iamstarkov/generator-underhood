@@ -44,6 +44,7 @@ module.exports = yeoman.generators.Base.extend({
     this.fs.writeJSON('.underhoodrc.json', {
       underhood: this.props.underhoodName,
       underhoodDesc: this.props.underhoodDesc,
+      underhoodSite: this.props.underhoodSite,
       curatorEmail: this.props.curatorEmail,
     });
 
