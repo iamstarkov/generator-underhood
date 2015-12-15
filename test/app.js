@@ -64,6 +64,7 @@ describe('generator-underhood:app', function describe() {
   it('creates proper underhood config', function it() {
     assert.fileContent('.underhoodrc.json', 'yo');
     assert.fileContent('.underhoodrc.json', 'best yo from the yoest');
+    assert.fileContent('.underhoodrc.json', 'yo.ru');
     assert.fileContent('.underhoodrc.json', 'curator@ema.il');
   });
 });
