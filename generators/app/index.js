@@ -1,4 +1,3 @@
-'use strict';
 var yeoman = require('yeoman-generator');
 
 function ifEmpty(errorMessage, val) {
@@ -6,39 +5,46 @@ function ifEmpty(errorMessage, val) {
 }
 
 module.exports = yeoman.generators.Base.extend({
-  prompting: function () {
+  prompting: function prompting() {
     var done = this.async();
 
     var prompts = [{
       name: 'underhoodName',
       message: 'underhood username:',
       store: true,
-      validate: ifEmpty.bind(null, 'You have to provide name')
+      validate: ifEmpty.bind(null, 'You have to provide name'),
     }, {
       name: 'underhoodDesc',
       message: 'underhood description:',
       store: true,
-      validate: ifEmpty.bind(null, 'You have to provide description')
+      validate: ifEmpty.bind(null, 'You have to provide description'),
     }, {
       name: 'underhoodSite',
       message: 'underhood site:',
       store: true,
-      validate: ifEmpty.bind(null, 'You have to provide site')
+      validate: ifEmpty.bind(null, 'You have to provide site'),
+    }, {
+      name: 'curatorEmail',
+      message: 'curator email:',
+      store: true,
+      validate: ifEmpty.bind(null, 'You have to provide email'),
     }];
 
-    this.prompt(prompts, function (props) {
+    this.prompt(prompts, function prompt(props) {
       this.props = props;
       done();
     }.bind(this));
   },
 
-  writing: function () {
-    var copy = function (from, to) {
+  writing: function writing() {
+    var copy = function copy(from, to) {
       this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this.props);
     }.bind(this);
 
     this.fs.writeJSON('.underhoodrc.json', {
-      underhood: this.props.underhoodName
+      underhood: this.props.underhoodName,
+      underhoodDesc: this.props.underhoodDesc,
+      curatorEmail: this.props.curatorEmail,
     });
 
     copy('css', 'css');
@@ -51,7 +57,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('pages', 'pages');
   },
 
-  install: function () {
+  install: function install() {
     this.installDependencies();
-  }
+  },
 });
