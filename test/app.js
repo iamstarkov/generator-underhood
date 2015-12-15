@@ -49,6 +49,7 @@ describe('generator-underhood:app', function describe() {
       'pages/about.md',
       'pages/authoring.md',
       'pages/instruction.md',
+      '.editorconfig',
     ]);
   });
 

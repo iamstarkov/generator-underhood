@@ -56,6 +56,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('helpers', 'helpers');
     copy('layouts', 'layouts');
     copy('pages', 'pages');
+    copy('editorconfig', '.editorconfig');
   },
 
   install: function install() {
