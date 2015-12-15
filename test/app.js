@@ -59,6 +59,7 @@ describe('generator-underhood:app', function describe() {
       'authors.js',
       'gulpfile.babel.js',
       'README.md',
+      'stats.js',
     ]);
   });
 
