@@ -53,6 +53,7 @@ describe('generator-underhood:app', function describe() {
       '.eslintignore',
       '.eslintrc',
       '.gitignore',
+      '.travis.yml',
     ]);
   });
 

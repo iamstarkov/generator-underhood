@@ -60,6 +60,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('eslintignore', '.eslintignore');
     copy('eslintrc', '.eslintrc');
     copy('gitignore', '.gitignore');
+    copy('travis.yml', '.travis.yml');
   },
 
   install: function install() {
