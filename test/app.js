@@ -60,6 +60,7 @@ describe('generator-underhood:app', function describe() {
       'gulpfile.babel.js',
       'README.md',
       'stats.js',
+      'test.js',
     ]);
   });
 
