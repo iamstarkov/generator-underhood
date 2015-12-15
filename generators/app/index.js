@@ -71,6 +71,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('README.md', 'README.md');
     copy('stats.js', 'stats.js');
     copy('test.js', 'test.js');
+    copy('update.js', 'update.js');
   },
 
   install: function install() {

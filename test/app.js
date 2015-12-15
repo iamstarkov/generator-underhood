@@ -61,6 +61,7 @@ describe('generator-underhood:app', function describe() {
       'README.md',
       'stats.js',
       'test.js',
+      'update.js',
     ]);
   });
 
