@@ -68,6 +68,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('authors.js', 'authors.js');
     copy('deploy.sh', 'deploy.sh');
     copy('gulpfile.babel.js', 'gulpfile.babel.js');
+    copy('README.md', 'README.md');
   },
 
   install: function install() {
