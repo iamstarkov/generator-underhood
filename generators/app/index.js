@@ -58,6 +58,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('pages', 'pages');
     copy('editorconfig', '.editorconfig');
     copy('eslintignore', '.eslintignore');
+    copy('eslintrc', '.eslintrc');
   },
 
   install: function install() {

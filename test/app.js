@@ -51,6 +51,7 @@ describe('generator-underhood:app', function describe() {
       'pages/instruction.md',
       '.editorconfig',
       '.eslintignore',
+      '.eslintrc',
     ]);
   });
 
