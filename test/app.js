@@ -52,6 +52,7 @@ describe('generator-underhood:app', function describe() {
       '.editorconfig',
       '.eslintignore',
       '.eslintrc',
+      '.gitignore',
     ]);
   });
 
