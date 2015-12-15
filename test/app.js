@@ -10,6 +10,8 @@ describe('generator-underhood:app', function describe() {
         underhoodName: 'yo',
         underhoodDesc: 'best yo from the yoest',
         underhoodSite: 'yo.ru',
+        githubUser: 'uhs',
+        githubRepo: 'yo',
         curatorEmail: 'curator@ema.il',
       })
       .on('end', done);
@@ -54,6 +56,7 @@ describe('generator-underhood:app', function describe() {
       '.eslintrc',
       '.gitignore',
       '.travis.yml',
+      'authors.js',
     ]);
   });
 
@@ -70,6 +73,11 @@ describe('generator-underhood:app', function describe() {
     assert.fileContent('.underhoodrc.json', 'yo');
     assert.fileContent('.underhoodrc.json', 'best yo from the yoest');
     assert.fileContent('.underhoodrc.json', 'yo.ru');
+    assert.fileContent('.underhoodrc.json', 'uhs');
     assert.fileContent('.underhoodrc.json', 'curator@ema.il');
+  });
+
+  it('creates proper deploy script', function it() {
+    assert.fileContent('deploy.sh', 'git remote add origin https://uhs:${GITHUB_TOKEN}@github.com/uhs/yo.git');
   });
 });

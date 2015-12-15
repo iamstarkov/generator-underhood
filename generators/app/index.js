@@ -24,6 +24,16 @@ module.exports = yeoman.generators.Base.extend({
       store: true,
       validate: ifEmpty.bind(null, 'You have to provide site'),
     }, {
+      name: 'githubUser',
+      message: 'github user:',
+      store: true,
+      validate: ifEmpty.bind(null, 'You have to provide github user'),
+    }, {
+      name: 'githubRepo',
+      message: 'github repo:',
+      store: true,
+      validate: ifEmpty.bind(null, 'You have to provide github repo'),
+    }, {
       name: 'curatorEmail',
       message: 'curator email:',
       store: true,
@@ -45,6 +55,8 @@ module.exports = yeoman.generators.Base.extend({
       underhood: this.props.underhoodName,
       underhoodDesc: this.props.underhoodDesc,
       underhoodSite: this.props.underhoodSite,
+      githubUser: this.props.githubUser,
+      githubRepo: this.props.githubRepo,
       curatorEmail: this.props.curatorEmail,
     });
 
@@ -61,6 +73,8 @@ module.exports = yeoman.generators.Base.extend({
     copy('eslintrc', '.eslintrc');
     copy('gitignore', '.gitignore');
     copy('travis.yml', '.travis.yml');
+    copy('authors.js', 'authors.js');
+    copy('deploy.sh', 'deploy.sh');
   },
 
   install: function install() {
