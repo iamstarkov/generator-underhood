@@ -16,6 +16,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "generator-git-init": "^1.0.4",
     "yeoman-generator": "^0.21.1"
   },
   "devDependencies": {
