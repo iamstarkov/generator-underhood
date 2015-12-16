@@ -63,6 +63,7 @@ describe('generator-underhood:app', function describe() {
       'test.js',
       'update.js',
       'webpack.config.babel.js',
+      'package.json',
     ]);
   });
 
