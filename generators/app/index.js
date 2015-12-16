@@ -72,6 +72,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('stats.js', 'stats.js');
     copy('test.js', 'test.js');
     copy('update.js', 'update.js');
+    copy('webpack.config.babel.js', 'webpack.config.babel.js');
   },
 
   install: function install() {
