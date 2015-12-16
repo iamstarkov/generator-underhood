@@ -1,8 +1,8 @@
 {
-  underhood: <%= underhoodName  %>,
-  underhoodDesc: <%= underhoodDesc %>,
-  underhoodSite: <%= underhoodSite %>,
-  githubUser: <%= githubUser %>,
-  githubRepo: <%= githubRepo %>,
-  curatorEmail: <%= curatorEmail %>
+  underhood: "<%= underhoodName  %>",
+  underhoodDesc: "<%= underhoodDesc %>",
+  underhoodSite: "<%= underhoodSite %>",
+  githubUser: "<%= githubUser %>",
+  githubRepo: "<%= githubRepo %>",
+  curatorEmail: "<%= curatorEmail %>"
 }
