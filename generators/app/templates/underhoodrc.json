@@ -4,5 +4,9 @@
   "underhoodSite": "<%= underhoodSite %>",
   "githubUser": "<%= githubUser %>",
   "githubRepo": "<%= githubRepo %>",
-  "curatorEmail": "<%= curatorEmail %>"
+  "curatorEmail": "<%= curatorEmail %>",
+  "site": {
+    "title": "Сайт @<%= underhoodName  %>",
+    "description": "<%= underhoodDesc %>"
+  }
 }
