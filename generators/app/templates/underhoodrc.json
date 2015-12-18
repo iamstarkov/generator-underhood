@@ -5,13 +5,15 @@
   "githubUser": "<%= githubUser %>",
   "githubRepo": "<%= githubRepo %>",
   "curatorEmail": "<%= curatorEmail %>",
+  "curatorTwitter": "<%= curatorTwitter %>",
+  "creatorTwitter": "<%= creatorTwitter %>",
   "site": {
     "title": "Сайт @<%= underhoodName  %>",
     "description": "<%= underhoodDesc %>",
     "feed_url": "https://<%= underhoodSite %>/rss.xml",
     "site_url": "https://<%= underhoodSite %>/",
-    "managingEditor": "iamstarkov@gmail.com (Vladimir Starkov)",
-    "webMaster": "iamstarkov@gmail.com (Vladimir Starkov)",
+    "managingEditor": "<%= creatorCreds %>",
+    "webMaster": "<%= creatorCreds %>",
     "copyright": "MIT",
     "language": "ru",
     "categories": [ "twitter" ]

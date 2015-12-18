@@ -38,9 +38,17 @@ module.exports = yeoman.generators.Base.extend({
       message: 'curator email:',
       store: true,
       validate: ifEmpty.bind(null, 'You have to provide email'),
+    }, {
+      name: 'curatorTwitter',
+      message: 'curator twitter:',
+      store: true,
+      validate: ifEmpty.bind(null, 'You have to provide twitter'),
     }];
 
+
     this.prompt(prompts, function prompt(props) {
+      props.creatorTwitter = 'iamstarkov';
+      props.creatorCreds = 'iamstarkov@gmail.com (Vladimir Starkov)';
       this.props = props;
       done();
     }.bind(this));
