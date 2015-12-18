@@ -45,10 +45,10 @@ module.exports = yeoman.generators.Base.extend({
       validate: ifEmpty.bind(null, 'You have to provide twitter'),
     }];
 
-
     this.prompt(prompts, function prompt(props) {
       props.creatorTwitter = 'iamstarkov';
       props.creatorCreds = 'iamstarkov@gmail.com (Vladimir Starkov)';
+      props.gauges = '56742cb6c88d9046da0016f5';
       this.props = props;
       done();
     }.bind(this));
