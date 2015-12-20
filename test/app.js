@@ -64,7 +64,8 @@ describe('generator-underhood:app', function describe() {
       'update.js',
       'webpack.config.babel.js',
       'package.json',
-      '.git'
+      '.git',
+      'migration',
     ]);
   });
 

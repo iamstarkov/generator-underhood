@@ -1,5 +1,6 @@
 var yeoman = require('yeoman-generator');
 var pkg = require('./../../package.json');
+var join = require('path').join;
 
 function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
@@ -85,6 +86,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('update.js', 'update.js');
     copy('webpack.config.babel.js', 'webpack.config.babel.js');
     copy('_package.json', 'package.json');
+    copy(join('migration', pkg.version), 'migration');
 
     this.composeWith('git-init', {}, {
       local: require.resolve('generator-git-init/generators/app'),
