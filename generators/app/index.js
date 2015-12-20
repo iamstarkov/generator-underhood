@@ -1,4 +1,5 @@
 var yeoman = require('yeoman-generator');
+var pkg = require('./../../package.json');
 
 function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
@@ -49,6 +50,8 @@ module.exports = yeoman.generators.Base.extend({
       props.creatorTwitter = 'iamstarkov';
       props.creatorCreds = 'iamstarkov@gmail.com (Vladimir Starkov)';
       props.gauges = '56742cb6c88d9046da0016f5';
+      props.underhoodVersion = pkg.version;
+
       this.props = props;
       done();
     }.bind(this));
