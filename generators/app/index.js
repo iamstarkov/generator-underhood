@@ -86,7 +86,7 @@ module.exports = yeoman.generators.Base.extend({
     copy('update.js', 'update.js');
     copy('webpack.config.babel.js', 'webpack.config.babel.js');
     copy('_package.json', 'package.json');
-    copy(join('migration', pkg.version), 'migration');
+    copy(join('migration', pkg.version + '.js'), 'migration.js');
 
     this.composeWith('git-init', {}, {
       local: require.resolve('generator-git-init/generators/app'),
