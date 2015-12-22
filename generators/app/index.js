@@ -1,6 +1,8 @@
 var yeoman = require('yeoman-generator');
 var pkg = require('./../../package.json');
 var join = require('path').join;
+var globby = require('globby');
+var rimraf = require('rimraf');
 
 function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
@@ -62,6 +64,13 @@ module.exports = yeoman.generators.Base.extend({
     var copy = function copy(from, to) {
       this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this.props);
     }.bind(this);
+
+    globby(['*', '!authors.js', '!.git', '!dump'])
+      .then(function then(paths) {
+        paths.map(function map(item) {
+          rimraf.sync(item);
+        });
+      });
 
     copy('underhoodrc.json', '.underhoodrc.json');
     copy('css', 'css');
