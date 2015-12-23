@@ -3,6 +3,7 @@ var pkg = require('./../../package.json');
 var join = require('path').join;
 var globby = require('globby');
 var rimraf = require('rimraf');
+var fs = require('fs');
 
 function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
@@ -72,6 +73,12 @@ module.exports = yeoman.generators.Base.extend({
         });
       });
 
+    fs.stat(this.destinationPath('authors.js'), function stat(err) {
+      if (err) {
+        copy('authors.js', 'authors.js');
+      }
+    });
+
     copy('underhoodrc.json', '.underhoodrc.json');
     copy('css', 'css');
     copy('js', 'js');
@@ -86,7 +93,6 @@ module.exports = yeoman.generators.Base.extend({
     copy('eslintrc', '.eslintrc');
     copy('gitignore', '.gitignore');
     copy('travis.yml', '.travis.yml');
-    copy('authors.js', 'authors.js');
     copy('deploy.sh', 'deploy.sh');
     copy('gulpfile.babel.js', 'gulpfile.babel.js');
     copy('README.md', 'README.md');
