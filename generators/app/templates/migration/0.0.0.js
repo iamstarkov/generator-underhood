@@ -1,11 +1,12 @@
-import authors from '../authors';
-import { merge } from 'ramda';
+import authors from './authors';
+import { reverse, merge } from 'ramda';
 import tokens from 'twitter-tokens';
 import getInfo from 'get-twitter-info';
-import getAuthorArea from '../helpers/get-author-area';
-import saveAuthorArea from '../helpers/save-author-area';
-import log from '../helpers/log';
-import { outputJSON } from 'fs-extra';
+import getAuthorArea from './helpers/get-author-area';
+import saveAuthorArea from './helpers/save-author-area';
+import log from './helpers/log';
+import { remove, outputJSON } from 'fs-extra';
+import saveMedia from './helpers/save-media';
 
 const spaces = 2;
 
@@ -41,3 +42,18 @@ function createEmptyMentions({ username }) {
 }
 
 authors.map(createEmptyMentions);
+
+// TWEETS
+
+import dump from './dump';
+function reverseAndRenameTweets({ username, tweets: oldTweets }) {
+  const tweets = reverse(oldTweets);
+  outputJSON(`./dump/${username}-tweets.json`, { tweets }, { spaces }, saveErr => {
+    log(`${saveErr ? '✗' : '✓'} ${username}’s reversed and renamed tweets`);
+  });
+  remove(`./dump/${username}.json`, rmErr => {
+    log(`${rmErr ? '✗' : '✓'} ${username}’s old tweets removed`);
+  });
+}
+
+authors.map(reverseAndRenameTweets);

@@ -4,6 +4,7 @@
   "description": "<%= underhoodDesc %>",
   "main": "index.js",
   "scripts": {
+    "migrate": "babel-node migration",
     "update": "babel-node update",
     "deploy": "gulp deploy",
     "deploy:ci": "npm-run-all git-setup:ci update save deploy",
