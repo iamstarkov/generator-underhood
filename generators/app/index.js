@@ -9,6 +9,12 @@ function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
 }
 
+function rm(paths) {
+  paths.map(function map(item) {
+    rimraf.sync(item);
+  });
+}
+
 module.exports = yeoman.generators.Base.extend({
   prompting: function prompting() {
     var done = this.async();
@@ -66,12 +72,8 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this.props);
     }.bind(this);
 
-    globby(['*', '!authors.js', '!.git', '!dump'])
-      .then(function then(paths) {
-        paths.map(function map(item) {
-          rimraf.sync(item);
-        });
-      });
+    globby(['*', '!node_modules', '!authors.js', '!.git', '!dump']).then(rm);
+    globby(['dump/*-stats.jsonx']).then(rm);
 
     fs.stat(this.destinationPath('authors.js'), function stat(err) {
       if (err) {
