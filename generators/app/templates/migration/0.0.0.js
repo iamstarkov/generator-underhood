@@ -19,7 +19,6 @@ function initInfo({ username }) {
     saveAuthorArea(username, 'info', result);
   });
 }
-
 authors.map(initInfo);
 
 // MEDIA
@@ -29,31 +28,23 @@ function initMedia({ username }) {
     saveAuthorArea(username, 'media', media);
   });
 }
-
 authors.map(initMedia);
 
-
 // MENTIONS
-
 function createEmptyMentions({ username }) {
   outputJSON(`./dump/${username}-mentions.json`, { mentions: [] }, { spaces }, saveErr => {
     log(`${saveErr ? '✗' : '✓'} ${username}’s empty mentions`);
   });
 }
-
 authors.map(createEmptyMentions);
 
 // TWEETS
-
-import dump from './dump';
-function reverseAndRenameTweets({ username, tweets: oldTweets }) {
+function reverseAndRenameTweets({ username }) {
+  const { tweets: oldTweets } = getAuthorArea(username);
   const tweets = reverse(oldTweets);
-  outputJSON(`./dump/${username}-tweets.json`, { tweets }, { spaces }, saveErr => {
-    log(`${saveErr ? '✗' : '✓'} ${username}’s reversed and renamed tweets`);
-  });
+  saveAuthorArea(username, 'tweets', { tweets });
   remove(`./dump/${username}.json`, rmErr => {
     log(`${rmErr ? '✗' : '✓'} ${username}’s old tweets removed`);
   });
 }
-
 authors.map(reverseAndRenameTweets);
