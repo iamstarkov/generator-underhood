@@ -73,7 +73,7 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this);
 
     globby(['*', '!node_modules', '!authors.js', '!.git', '!dump']).then(rm);
-    globby(['dump/*-stats.jsonx']).then(rm);
+    globby(['dump/*-stats.json']).then(rm);
 
     fs.stat(this.destinationPath('authors.js'), function stat(err) {
       if (err) {
