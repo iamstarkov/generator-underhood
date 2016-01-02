@@ -7,6 +7,7 @@ import saveAuthorArea from './helpers/save-author-area';
 import log from './helpers/log';
 import { remove, outputJSON } from 'fs-extra';
 import saveMedia from './helpers/save-media';
+import rimraf from 'rimraf';
 
 const spaces = 2;
 
@@ -48,3 +49,5 @@ function reverseAndRenameTweets({ username }) {
   });
 }
 authors.map(reverseAndRenameTweets);
+
+rimraf.sync('./migration.js')
