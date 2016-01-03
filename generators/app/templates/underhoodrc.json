@@ -9,6 +9,7 @@
   "creatorTwitter": "<%= creatorTwitter %>",
   "gauges": "<%= gauges %>",
   "creatorCreds": "<%= creatorCreds %>",
+  "underhoodVersion": "<%= underhoodVersion %>",
   "site": {
     "title": "Сайт @<%= underhoodName  %>",
     "description": "<%= underhoodDesc %>",
