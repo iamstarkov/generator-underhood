@@ -254,6 +254,8 @@ tr {
 
 .tweet {
   position: relative;
+  hyphens: auto;
+  word-break: break-word;
 }
 
 .tweet__time {
