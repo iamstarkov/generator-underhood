@@ -66,6 +66,8 @@ describe('generator-underhood:app', function describe() {
       'package.json',
       '.git',
       'migration.js',
+      'CHANGELOG.md',
+      'ROADMAP.md',
     ]);
   });
 

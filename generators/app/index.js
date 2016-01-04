@@ -103,6 +103,8 @@ module.exports = yeoman.generators.Base.extend({
     copy('update.js', 'update.js');
     copy('webpack.config.babel.js', 'webpack.config.babel.js');
     copy('_package.json', 'package.json');
+    copy('CHANGELOG.md', 'CHANGELOG.md');
+    copy('ROADMAP.md', 'ROADMAP.md');
     copy(join('migration', pkg.version + '.js'), 'migration.js');
 
     this.composeWith('git-init', {}, {

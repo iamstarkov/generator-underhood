@@ -1,6 +1,6 @@
 {
   "name": "<%= underhoodName  %>",
-  "version": "0.0.0",
+  "version": "<%= underhoodVersion %>",
   "description": "<%= underhoodDesc %>",
   "main": "index.js",
   "scripts": {
