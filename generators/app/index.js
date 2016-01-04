@@ -72,9 +72,6 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this.props);
     }.bind(this);
 
-    globby(['*', '!node_modules', '!authors.js', '!.git', '!dump']).then(rm);
-    globby(['dump/*-stats.json']).then(rm);
-
     fs.stat(this.destinationPath('authors.js'), function stat(err) {
       if (err) {
         copy('authors.js', 'authors.js');
