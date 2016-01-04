@@ -1,33 +1,28 @@
-# generator-underhood [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Yeoman generator to create collective twitter site
+# generator-underhood
+
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][depstat-image]][depstat-url]
+
+> Yeoman generator to create collective twitter website
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-underhood using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+    npm i -g yo generator-underhood
 
-```bash
-npm install -g yo
-npm install -g generator-underhood
-```
+## Usage
 
-Then generate your new project:
-
-```bash
-yo generator-underhood
-```
-
-## Getting To Know Yeoman
-
-Yeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he&#39;s very easy to work with. If you think he&#39;s too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
+    yo underhood
 
 ## License
 
 MIT © [Vladimir Starkov](https://iamstarkov.com/)
 
-
-[npm-image]: https://badge.fury.io/js/generator-underhood.svg
 [npm-url]: https://npmjs.org/package/generator-underhood
-[travis-image]: https://travis-ci.org/iamstarkov/generator-underhood.svg?branch=master
+[npm-image]: https://img.shields.io/npm/v/generator-underhood.svg?style=flat-square
+
 [travis-url]: https://travis-ci.org/iamstarkov/generator-underhood
-[daviddm-image]: https://david-dm.org/iamstarkov/generator-underhood.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/iamstarkov/generator-underhood
+[travis-image]: https://img.shields.io/travis/iamstarkov/generator-underhood.svg?style=flat-square
+
+[depstat-url]: https://david-dm.org/iamstarkov/generator-underhood
+[depstat-image]: https://david-dm.org/iamstarkov/generator-underhood.svg?style=flat-square
