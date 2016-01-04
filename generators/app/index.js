@@ -1,18 +1,10 @@
 var yeoman = require('yeoman-generator');
 var pkg = require('./../../package.json');
 var join = require('path').join;
-var globby = require('globby');
-var rimraf = require('rimraf');
 var fs = require('fs');
 
 function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
-}
-
-function rm(paths) {
-  paths.map(function map(item) {
-    rimraf.sync(item);
-  });
 }
 
 module.exports = yeoman.generators.Base.extend({
