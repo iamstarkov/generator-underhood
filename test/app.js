@@ -65,7 +65,7 @@ describe('generator-underhood:app', function describe() {
       'webpack.config.babel.js',
       'package.json',
       '.git',
-      'migration',
+      'migration.js',
     ]);
   });
 
@@ -79,5 +79,6 @@ describe('generator-underhood:app', function describe() {
     assert.fileContent('deploy.sh', 'git remote add origin https://uhs:${GITHUB_TOKEN}@github.com/uhs/yo.git');
     assert.fileContent('README.md', 'best yo from the yoest');
     assert.fileContent('README.md', 'yo.ru');
+    assert.fileContent('layouts/gauges.jade', '568823b84b2ffa534600335e');
   });
 });
