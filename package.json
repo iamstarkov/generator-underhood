@@ -18,7 +18,8 @@
   "dependencies": {
     "eslint-plugin-require-path-exists": "^1.0.25",
     "generator-git-init": "^1.0.4",
-    "yeoman-generator": "^0.21.1"
+    "yeoman-generator": "^0.22.2",
+    "yeoman-test": "^1.0.0"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^3.0.0",

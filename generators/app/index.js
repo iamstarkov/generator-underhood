@@ -7,7 +7,7 @@ function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
 }
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
   prompting: function prompting() {
     var done = this.async();
     var existing = this.fs.exists(this.destinationPath('.underhoodrc.json'))
