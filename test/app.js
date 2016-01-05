@@ -85,3 +85,25 @@ describe('generator-underhood:app', function describe() {
     assert.fileContent('layouts/gauges.jade', '568823b84b2ffa534600335e');
   });
 });
+
+describe('underhood:app with alredy existing .underhoodrc.json', function () {
+  before(function before(done) {
+    helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({
+        underhoodDesc: 'best yo from the yoest',
+        underhoodSite: 'yo.ru',
+        githubUser: 'uhs',
+        githubRepo: 'yo',
+        curatorEmail: 'curator@ema.il',
+        curatorTwitter: 'curator',
+      })
+      .on('ready', function onReady(gen) {
+        gen.fs.write(gen.destinationPath('.underhoodrc.json'), '{ "underhood": "yay" }');
+      }.bind(this))
+      .on('end', done);
+  });
+
+  it('creates files with proper extrapolation', function it() {
+    assert.fileContent('.underhoodrc.json', 'yay');
+  });
+});

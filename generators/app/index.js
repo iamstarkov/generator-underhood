@@ -10,44 +10,82 @@ function ifEmpty(errorMessage, val) {
 module.exports = yeoman.generators.Base.extend({
   prompting: function prompting() {
     var done = this.async();
+    var existing = this.fs.exists(this.destinationPath('.underhoodrc.json'))
+          ? JSON.parse(this.fs.read(this.destinationPath('.underhoodrc.json')))
+          : {};
 
-    var prompts = [{
-      name: 'underhoodName',
-      message: 'underhood username:',
-      validate: ifEmpty.bind(null, 'You have to provide name'),
-    }, {
-      name: 'underhoodDesc',
-      message: 'underhood description:',
-      validate: ifEmpty.bind(null, 'You have to provide description'),
-    }, {
-      name: 'underhoodSite',
-      message: 'underhood site:',
-      validate: ifEmpty.bind(null, 'You have to provide site'),
-    }, {
-      name: 'githubUser',
-      message: 'github user:',
-      validate: ifEmpty.bind(null, 'You have to provide github user'),
-    }, {
-      name: 'githubRepo',
-      message: 'github repo:',
-      validate: ifEmpty.bind(null, 'You have to provide github repo'),
-    }, {
-      name: 'curatorEmail',
-      message: 'curator email:',
-      validate: ifEmpty.bind(null, 'You have to provide email'),
-    }, {
-      name: 'curatorTwitter',
-      message: 'curator twitter:',
-      validate: ifEmpty.bind(null, 'You have to provide twitter'),
-    }];
+    // console.log(existing);
 
+    var prompts = [];
+
+    // console.log(existing.underhood)
+    if (!existing.underhood) {
+      prompts = prompts.concat([{
+        name: 'underhoodName',
+        message: 'underhood username:',
+        validate: ifEmpty.bind(null, 'You have to provide name'),
+      }]);
+    }
+
+    if (!existing.underhoodDesc) {
+      prompts = prompts.concat([{
+        name: 'underhoodDesc',
+        message: 'underhood description:',
+        validate: ifEmpty.bind(null, 'You have to provide description'),
+      }]);
+    }
+
+    if (!existing.underhoodSite) {
+      prompts = prompts.concat([{
+        name: 'underhoodSite',
+        message: 'underhood site:',
+        validate: ifEmpty.bind(null, 'You have to provide site'),
+      }]);
+    }
+
+    if (!existing.githubUser) {
+      prompts = prompts.concat([{
+        name: 'githubUser',
+        message: 'github user:',
+        validate: ifEmpty.bind(null, 'You have to provide github user'),
+      }]);
+    }
+
+    if (!existing.githubRepo) {
+      prompts = prompts.concat([{
+        name: 'githubRepo',
+        message: 'github repo:',
+        validate: ifEmpty.bind(null, 'You have to provide github repo'),
+      }]);
+    }
+
+    if (!existing.curatorEmail) {
+      prompts = prompts.concat([{
+        name: 'curatorEmail',
+        message: 'curator email:',
+        validate: ifEmpty.bind(null, 'You have to provide email'),
+      }]);
+    }
+
+    if (!existing.curatorTwitter) {
+      prompts = prompts.concat([{
+        name: 'curatorTwitter',
+        message: 'curator twitter:',
+        validate: ifEmpty.bind(null, 'You have to provide twitter'),
+      }]);
+    }
+    // console.log(prompts);
     this.prompt(prompts, function prompt(props) {
       props.creatorTwitter = 'iamstarkov';
       props.creatorCreds = 'iamstarkov@gmail.com (Vladimir Starkov)';
       props.gauges = '56742cb6c88d9046da0016f5';
       props.underhoodVersion = pkg.version;
 
-      this.props = props;
+      if (existing.underhood) {
+        existing.underhoodName = existing.underhood;
+      }
+
+      this.props = Object.assign({}, existing, props);
       done();
     }.bind(this));
   },
