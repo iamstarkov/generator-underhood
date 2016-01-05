@@ -13,6 +13,7 @@ describe('generator-underhood:app', function describe() {
         githubUser: 'uhs',
         githubRepo: 'yo',
         curatorEmail: 'curator@ema.il',
+        curatorTwitter: 'curator',
       })
       .on('end', done);
   });
