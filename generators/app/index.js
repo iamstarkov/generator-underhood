@@ -14,37 +14,30 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
       name: 'underhoodName',
       message: 'underhood username:',
-      store: true,
       validate: ifEmpty.bind(null, 'You have to provide name'),
     }, {
       name: 'underhoodDesc',
       message: 'underhood description:',
-      store: true,
       validate: ifEmpty.bind(null, 'You have to provide description'),
     }, {
       name: 'underhoodSite',
       message: 'underhood site:',
-      store: true,
       validate: ifEmpty.bind(null, 'You have to provide site'),
     }, {
       name: 'githubUser',
       message: 'github user:',
-      store: true,
       validate: ifEmpty.bind(null, 'You have to provide github user'),
     }, {
       name: 'githubRepo',
       message: 'github repo:',
-      store: true,
       validate: ifEmpty.bind(null, 'You have to provide github repo'),
     }, {
       name: 'curatorEmail',
       message: 'curator email:',
-      store: true,
       validate: ifEmpty.bind(null, 'You have to provide email'),
     }, {
       name: 'curatorTwitter',
       message: 'curator twitter:',
-      store: true,
       validate: ifEmpty.bind(null, 'You have to provide twitter'),
     }];
 
