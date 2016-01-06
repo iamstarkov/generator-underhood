@@ -5,6 +5,9 @@ var helpers = require('yeoman-test');
 
 describe('generator-underhood:app', function _describe() {
   before(function _before(done) {
+    // Leave it alone for a little longer...
+    this.timeout(10000);
+
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         underhoodName: 'yo',
@@ -89,6 +92,9 @@ describe('generator-underhood:app', function _describe() {
 
 describe('generator-underhood:app with existing .underhoodrc.json', function _describe() {
   before(function _before(done) {
+    // He is not dumb, he is thorough...
+    this.timeout(10000);
+
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         underhoodDesc: 'best yo from the yoest',
