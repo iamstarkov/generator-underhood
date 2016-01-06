@@ -3,8 +3,8 @@ var path = require('path');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
-describe('generator-underhood:app', function describe() {
-  before(function before(done) {
+describe('generator-underhood:app', function _describe() {
+  before(function _before(done) {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         underhoodName: 'yo',
@@ -18,7 +18,7 @@ describe('generator-underhood:app', function describe() {
       .on('end', done);
   });
 
-  it('creates files', function it() {
+  it('creates files', function _it() {
     assert.file([
       '.underhoodrc.json',
       'css/styles.css',
@@ -72,7 +72,7 @@ describe('generator-underhood:app', function describe() {
     ]);
   });
 
-  it('creates files with proper extrapolation', function it() {
+  it('creates files with proper extrapolation', function _it() {
     assert.fileContent('static/CNAME', 'yo.ru');
     assert.fileContent('./pages/about.md', 'yo');
     assert.fileContent('pages/about.md', 'best yo from the yoest');
@@ -86,8 +86,8 @@ describe('generator-underhood:app', function describe() {
   });
 });
 
-describe('underhood:app with alredy existing .underhoodrc.json', function () {
-  before(function before(done) {
+describe('generator-underhood:app with existing .underhoodrc.json', function _describe() {
+  before(function _before(done) {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         underhoodDesc: 'best yo from the yoest',
@@ -103,7 +103,7 @@ describe('underhood:app with alredy existing .underhoodrc.json', function () {
       .on('end', done);
   });
 
-  it('creates files with proper extrapolation', function it() {
+  it('creates files with proper extrapolation', function _it() {
     assert.fileContent('.underhoodrc.json', 'yay');
   });
 });
