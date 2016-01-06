@@ -2,6 +2,7 @@ var yeoman = require('yeoman-generator');
 var pkg = require('./../../package.json');
 var join = require('path').join;
 var fs = require('fs');
+var assign = require('object-assign');
 
 function ifEmpty(errorMessage, val) {
   return val.length > 0 ? true : errorMessage;
@@ -85,7 +86,7 @@ module.exports = yeoman.Base.extend({
         existing.underhoodName = existing.underhood;
       }
 
-      this.props = Object.assign({}, existing, props);
+      this.props = assign({}, existing, props);
       done();
     }.bind(this));
   },

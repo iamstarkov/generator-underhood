@@ -3,8 +3,11 @@ var path = require('path');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
-describe('generator-underhood:app', function describe() {
-  before(function before(done) {
+describe('generator-underhood:app', function _describe() {
+  before(function _before(done) {
+    // Leave it alone for a little longer...
+    this.timeout(10000);
+
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         underhoodName: 'yo',
@@ -18,7 +21,7 @@ describe('generator-underhood:app', function describe() {
       .on('end', done);
   });
 
-  it('creates files', function it() {
+  it('creates files', function _it() {
     assert.file([
       '.underhoodrc.json',
       'css/styles.css',
@@ -72,22 +75,26 @@ describe('generator-underhood:app', function describe() {
     ]);
   });
 
-  it('creates files with proper extrapolation', function it() {
+  it('creates files with proper extrapolation', function _it() {
     assert.fileContent('static/CNAME', 'yo.ru');
     assert.fileContent('./pages/about.md', 'yo');
     assert.fileContent('pages/about.md', 'best yo from the yoest');
     assert.fileContent('pages/about.md', 'https://twitter.com/yo');
     assert.fileContent('pages/authoring.md', 'https://twitter.com/yo');
     assert.fileContent('pages/authoring.md', 'curator@ema.il');
-    assert.fileContent('deploy.sh', 'git remote add origin https://uhs:${GITHUB_TOKEN}@github.com/uhs/yo.git');
+    assert.fileContent('deploy.sh', 'git remote add origin '
+      + 'https://uhs:${GITHUB_TOKEN}@github.com/uhs/yo.git');
     assert.fileContent('README.md', 'best yo from the yoest');
     assert.fileContent('README.md', 'yo.ru');
     assert.fileContent('layouts/gauges.jade', '568823b84b2ffa534600335e');
   });
 });
 
-describe('underhood:app with alredy existing .underhoodrc.json', function () {
-  before(function before(done) {
+describe('generator-underhood:app with existing .underhoodrc.json', function _describe() {
+  before(function _before(done) {
+    // He is not dumb, he is thorough...
+    this.timeout(10000);
+
     helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         underhoodDesc: 'best yo from the yoest',
@@ -99,11 +106,11 @@ describe('underhood:app with alredy existing .underhoodrc.json', function () {
       })
       .on('ready', function onReady(gen) {
         gen.fs.write(gen.destinationPath('.underhoodrc.json'), '{ "underhood": "yay" }');
-      }.bind(this))
+      })
       .on('end', done);
   });
 
-  it('creates files with proper extrapolation', function it() {
+  it('creates files with proper extrapolation', function _it() {
     assert.fileContent('.underhoodrc.json', 'yay');
   });
 });
