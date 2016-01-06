@@ -79,7 +79,8 @@ describe('generator-underhood:app', function _describe() {
     assert.fileContent('pages/about.md', 'https://twitter.com/yo');
     assert.fileContent('pages/authoring.md', 'https://twitter.com/yo');
     assert.fileContent('pages/authoring.md', 'curator@ema.il');
-    assert.fileContent('deploy.sh', 'git remote add origin https://uhs:${GITHUB_TOKEN}@github.com/uhs/yo.git');
+    assert.fileContent('deploy.sh', 'git remote add origin '
+      + 'https://uhs:${GITHUB_TOKEN}@github.com/uhs/yo.git');
     assert.fileContent('README.md', 'best yo from the yoest');
     assert.fileContent('README.md', 'yo.ru');
     assert.fileContent('layouts/gauges.jade', '568823b84b2ffa534600335e');
@@ -99,7 +100,7 @@ describe('generator-underhood:app with existing .underhoodrc.json', function _de
       })
       .on('ready', function onReady(gen) {
         gen.fs.write(gen.destinationPath('.underhoodrc.json'), '{ "underhood": "yay" }');
-      }.bind(this))
+      })
       .on('end', done);
   });
 
