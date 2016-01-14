@@ -9,6 +9,7 @@
   "creatorTwitter": "<%= creatorTwitter %>",
   "gauges": "<%= gauges %>",
   "googleAnalytics": "<%= googleAnalytics %>",
+  "yandexMetric": "<%= yandexMetric %>",
   "creatorCreds": "<%= creatorCreds %>",
   "underhoodVersion": "<%= underhoodVersion %>",
   "site": {
