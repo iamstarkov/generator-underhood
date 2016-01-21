@@ -2,7 +2,6 @@
 
 ## 0.1.0, 21 january 2016
 
-*
 * add google analytics
 * add yandex metric
 * generator: remove migration part
