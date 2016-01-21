@@ -1,11 +1,13 @@
-# 0.1.0 WIP
+# CHANGELOG
+
+## 0.1.0, 21 january 2016
 
 * add google analytics
 * add yandex metric
 * generator: dont ask already saved prompts
 * css: long words in tweets archive [#1](https://github.com/iamstarkov/generator-underhood/pull/1) by [@Grawl](https://github.com/Grawl)
 
-# 0.0.0
+## 0.0.0, 4 january 2016
 
 * migrations for old projects
 * scripts for dumping tweets
