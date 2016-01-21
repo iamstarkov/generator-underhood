@@ -15,11 +15,8 @@ module.exports = yeoman.Base.extend({
           ? JSON.parse(this.fs.read(this.destinationPath('.underhoodrc.json')))
           : {};
 
-    // console.log(existing);
-
     var prompts = [];
 
-    // console.log(existing.underhood)
     if (!existing.underhood) {
       prompts = prompts.concat([{
         name: 'underhoodName',
@@ -75,7 +72,21 @@ module.exports = yeoman.Base.extend({
         validate: ifEmpty.bind(null, 'You have to provide twitter'),
       }]);
     }
-    // console.log(prompts);
+
+    if (!existing.googleAnalytics) {
+      prompts = prompts.concat([{
+        name: 'googleAnalytics',
+        message: 'google analytics id:'
+      }]);
+    }
+
+    if (!existing.yandexMetric) {
+      prompts = prompts.concat([{
+        name: 'yandexMetric',
+        message: 'yandex metric id:'
+      }]);
+    }
+
     this.prompt(prompts, function prompt(props) {
       props.creatorTwitter = 'iamstarkov';
       props.creatorCreds = 'iamstarkov@gmail.com (Vladimir Starkov)';
@@ -86,7 +97,7 @@ module.exports = yeoman.Base.extend({
         existing.underhoodName = existing.underhood;
       }
 
-      this.props = assign({}, existing, props);
+      this.props = assign({}, props, existing);
       done();
     }.bind(this));
   },
