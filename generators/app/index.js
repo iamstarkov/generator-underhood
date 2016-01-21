@@ -137,7 +137,6 @@ module.exports = yeoman.Base.extend({
     copy('_package.json', 'package.json');
     copy('CHANGELOG.md', 'CHANGELOG.md');
     copy('ROADMAP.md', 'ROADMAP.md');
-    copy(join('migration', pkg.version + '.js'), 'migration.js');
 
     this.composeWith('git-init', {}, {
       local: require.resolve('generator-git-init/generators/app'),

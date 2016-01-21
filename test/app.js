@@ -69,7 +69,6 @@ describe('generator-underhood:app', function _describe() {
       'webpack.config.babel.js',
       'package.json',
       '.git',
-      'migration.js',
       'CHANGELOG.md',
       'ROADMAP.md',
     ]);

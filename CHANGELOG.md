@@ -2,8 +2,10 @@
 
 ## 0.1.0, 21 january 2016
 
+*
 * add google analytics
 * add yandex metric
+* generator: remove migration part
 * generator: dont ask already saved prompts
 * css: long words in tweets archive [#1](https://github.com/iamstarkov/generator-underhood/pull/1) by [@Grawl](https://github.com/Grawl)
 
