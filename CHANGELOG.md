@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.1, 22 january 2016
+
+* fix yandex metric template
+
 ## 0.1.0, 21 january 2016
 
 * add google analytics
