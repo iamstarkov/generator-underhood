@@ -1,6 +1,6 @@
 {
   "name": "generator-underhood",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Yeoman generator to create collective twitter site",
   "homepage": "https://github.com/iamstarkov/generator-underhood/",
   "author": {
