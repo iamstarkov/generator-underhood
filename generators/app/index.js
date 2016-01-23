@@ -88,16 +88,22 @@ module.exports = yeoman.Base.extend({
     }
 
     this.prompt(prompts, function prompt(props) {
-      props.creatorTwitter = 'iamstarkov';
-      props.creatorCreds = 'iamstarkov@gmail.com (Vladimir Starkov)';
-      props.gauges = '56742cb6c88d9046da0016f5';
-      props.underhoodVersion = pkg.version;
-
       if (existing.underhood) {
         existing.underhoodName = existing.underhood;
       }
 
-      this.props = assign({}, props, existing);
+      this.props = assign({},
+        {
+          gauges: '56742cb6c88d9046da0016f5'
+        },
+        props,
+        existing,
+        {
+          underhoodVersion: pkg.version,
+          creatorTwitter: 'iamstarkov',
+          creatorCreds: 'iamstarkov@gmail.com (Vladimir Starkov)',
+        }
+      );
       done();
     }.bind(this));
   },

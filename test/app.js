@@ -2,6 +2,7 @@
 var path = require('path');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
+var pkg = require('./../package.json');
 
 describe('generator-underhood:app', function _describe() {
   before(function _before(done) {
@@ -104,12 +105,13 @@ describe('generator-underhood:app with existing .underhoodrc.json', function _de
         curatorTwitter: 'curator',
       })
       .on('ready', function onReady(gen) {
-        gen.fs.write(gen.destinationPath('.underhoodrc.json'), '{ "underhood": "yay" }');
+        gen.fs.write(gen.destinationPath('.underhoodrc.json'), '{ "underhood": "yay", "underhoodVersion": "0.0.0" }');
       })
       .on('end', done);
   });
 
   it('creates files with proper extrapolation', function _it() {
     assert.fileContent('.underhoodrc.json', 'yay');
+    assert.fileContent('.underhoodrc.json', pkg.version);
   });
 });

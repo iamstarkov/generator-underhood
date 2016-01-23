@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.2, 22 january 2016
+
+* generator: fix underhoodVersion extrapolation into config
+
 ## 0.1.1, 22 january 2016
 
 * fix yandex metric template
