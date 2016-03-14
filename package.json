@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "eslint-config-airbnb": "^5.0.0",
-    "eslint-plugin-react": "^3.11.3",
+    "eslint-plugin-react": "^4.2.2",
     "mocha": "^2.3.3",
     "yeoman-assert": "^2.0.0"
   },
