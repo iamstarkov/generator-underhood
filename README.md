@@ -1,5 +1,7 @@
 # generator-underhood
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/iamstarkov/generator-underhood.svg)](https://greenkeeper.io/)
+
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
